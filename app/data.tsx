@@ -3,6 +3,7 @@ export const assets = {
   hero: "/assets/6897e825c6b0687b4b32df04_Property Protection-p-1600.webp",
   residential: "/assets/689666a88d8710ce5c68a127_Hero Banner Background.webp",
   contractors: "/assets/6897f8b517bd728a071ce046_Construction Site-p-1600.webp",
+  contractorCard: "/assets/68978f34ce63e81f2901c8b3_Contractor Hub-p-1600.webp",
   hoa: "/assets/689795b4e2a5a74bacdf7fd6_HOA Hub-p-1600.webp",
   pricing: "/assets/68966a1961b150d528cdc6fe_df98edadf91cf8c00b89ec697fb81a75_Dumpster Pricing-p-1600.webp",
   onTime: "/assets/6897dd01a996f62b608b094c_On Time Every Time-p-1600.webp",

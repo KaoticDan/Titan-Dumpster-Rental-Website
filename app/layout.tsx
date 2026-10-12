@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Header, Footer } from "./components";
 import "./globals.css";
 import "./hero-tuning.css";
+import "./industry-interactions.css";
 
 export const metadata: Metadata = {
   title: "Dumpster Rental in Tuscon Arizona | On-Time Service | Titan Dumpster Rental",

@@ -1,0 +1,26 @@
+/* The source cards reveal their copy and borrow width from their neighbors. */
+.industry-grid{display:flex;gap:32px}
+.industry-card{position:relative;flex:1 1 0;width:0;min-width:0;height:clamp(500px,39vw,640px);min-height:0;align-items:flex-end;border-width:1px;transition:flex-grow .35s ease,background-position .35s ease;transform:none}
+.industry-card:hover,.industry-card:focus-visible{flex-grow:1.36;transform:none}
+.industry-card>.industry-card-copy{width:100%;padding:32px}
+.industry-card h3{font-size:40px;margin:0;transition:opacity .25s ease}
+.industry-card-detail{display:grid;grid-template-rows:0fr;opacity:0;transition:grid-template-rows .35s ease,opacity .25s ease}
+.industry-card-detail>div{min-height:0;overflow:hidden}
+.industry-card-detail p{max-width:370px;margin:24px 0 30px;font-size:16px;line-height:1.5}
+.industry-card-detail span{font-size:16px;text-decoration:none}
+.industry-card:hover .industry-card-detail,.industry-card:focus-visible .industry-card-detail{grid-template-rows:1fr;opacity:1}
+.industry-grid:has(.industry-card:is(:hover,:focus-visible)) .industry-card:not(:is(:hover,:focus-visible)) h3{opacity:0}
+.industry-card:focus-visible{outline:3px solid #fff;outline-offset:4px}
+
+/* Match the Fable button depth and press motion with Titan's colors. */
+.button{min-height:44px;padding:10px 24px;border:1px solid transparent;border-radius:4px;font-size:16px;font-weight:500;line-height:24px;box-shadow:0 5px 0 #009d7e;transition:transform .18s ease,box-shadow .18s ease,background-color .18s ease,color .18s ease}
+.button.outline{border-color:#fff;background:rgba(255,255,255,.1);color:#fff;box-shadow:0 5px 0 rgba(255,255,255,.25)}
+.button:hover,.button:active{transform:translateY(5px);box-shadow:0 0 0 transparent}
+.button.outline:hover{background:rgba(255,255,255,.1);color:#fff}
+.button:focus-visible{outline:2px solid #fff;outline-offset:4px}
+.button:disabled{box-shadow:none;transform:none}
+
+@media(max-width:900px){.industry-grid{gap:18px}.industry-card>.industry-card-copy{padding:22px}.industry-card h3{font-size:clamp(24px,3vw,34px)}}
+@media(max-width:650px){.industry-grid{display:grid;grid-template-columns:1fr;gap:22px}.industry-card{width:100%;height:390px;min-height:0}.industry-card>.industry-card-copy{padding:26px}.industry-card h3{font-size:30px}.industry-card-detail{grid-template-rows:1fr;opacity:1}.industry-card-detail p{margin:16px 0 20px}.industry-card:hover,.industry-card:focus-visible{transform:none}.industry-grid:has(.industry-card:is(:hover,:focus-visible)) .industry-card:not(:is(:hover,:focus-visible)) h3{opacity:1}}
+@media(hover:none){.industry-card-detail{grid-template-rows:1fr;opacity:1}.industry-grid:has(.industry-card:is(:hover,:focus-visible)) .industry-card:not(:is(:hover,:focus-visible)) h3{opacity:1}}
+@media(prefers-reduced-motion:reduce){.industry-card,.industry-card h3,.industry-card-detail,.button{transition:none}}
