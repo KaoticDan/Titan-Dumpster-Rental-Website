@@ -23,4 +23,3 @@ Set `SUPABASE_URL` and `SUPABASE_PUBLISHABLE_KEY` for quote submissions. The for
 ## Source notes
 
 The Webflow site has an inactive Blog link. It also has copied privacy text naming Once Upon A Business. This recreation keeps Blog inactive and uses a Titan-specific privacy draft to describe its quote flow. The published source gallery shows seven dumpster photos; six were available for local asset capture.
-

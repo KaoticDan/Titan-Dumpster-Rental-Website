@@ -1,0 +1,2 @@
+.hero.narrow .hero-copy,.hero.narrow .hero-copy p{max-width:560px}
+@media(min-width:651px){.hero,.hero-inner{min-height:884px}}
