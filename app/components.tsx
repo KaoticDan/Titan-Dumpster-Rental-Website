@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { assets, faqs, prices } from "./data";
 import { Gallery } from "./gallery";
+import { TimelineRail } from "./timeline-rail";
 
 export function Header() {
   return <div className="site-header">
@@ -39,7 +40,8 @@ export function Pricing() {
 }
 
 export function Features({ eyebrow, heading, subheading, features, timeline = false }: { eyebrow: string; heading: string; subheading: string; features: readonly (readonly [string,string,string])[]; timeline?: boolean }) {
-  return <section className={timeline ? "features timeline" : "features"}><div className="container"><div className="section-heading center"><span className="eyebrow">{eyebrow}</span><h2>{heading}</h2><p>{subheading}</p></div><div className="feature-list">{features.map(([title,text,image],index)=><article className="feature" key={title}><div className="feature-image"><img src={image} alt="" loading="lazy" /></div><div className="feature-copy"><h3>{title}</h3><p>{text}</p></div><span className="feature-dot" aria-hidden="true"></span></article>)}</div></div></section>;
+  const items = features.map(([title,text,image])=><article className="feature" key={title}><div className="feature-image"><img src={image} alt="" loading="lazy" /></div><div className="feature-copy"><h3>{title}</h3><p>{text}</p></div><span className="feature-dot" aria-hidden="true"></span></article>);
+  return <section className={timeline ? "features timeline" : "features"}><div className="container"><div className="section-heading center"><span className="eyebrow">{eyebrow}</span><h2>{heading}</h2><p>{subheading}</p></div>{timeline ? <TimelineRail>{items}</TimelineRail> : <div className="feature-list">{items}</div>}</div></section>;
 }
 
 export function Callout({ heading, text }: { heading: string; text: string }) {

@@ -7,3 +7,14 @@
 .privacy{background:#1a1a1a;padding:110px 0}.privacy article{max-width:780px;margin:auto}.privacy h1{text-align:center;font-size:56px}.privacy .effective{text-align:center;font-size:20px;margin-bottom:90px}.privacy h2{font-size:28px;margin-top:55px}.privacy p,.privacy li{line-height:1.55;margin-bottom:16px}.privacy a{text-decoration:underline}
 @media(max-width:800px){.quote-section{grid-template-columns:1fr}.quote-image{display:none}.quote-form-side{padding:70px 5%;min-height:700px}}
 @media(max-width:650px){.privacy{padding:70px 0}.privacy h1{font-size:42px}.privacy .effective{margin-bottom:55px}}
+
+/* The center rail fills green as it passes through the viewport. */
+.timeline .feature-list::before{background:#303030;z-index:0}
+.timeline .feature-list::after{content:"";position:absolute;top:0;left:50%;width:2px;height:var(--timeline-progress,0px);max-height:100%;background:var(--green);z-index:1;pointer-events:none}
+.timeline .feature-dot{z-index:2}
+@media(max-width:650px){
+  .timeline .feature-list{padding-left:32px}
+  .timeline .feature-list::before{display:block;left:7px}
+  .timeline .feature-list::after{left:7px}
+  .timeline .feature-dot{display:block;left:-32px;top:9px}
+}
