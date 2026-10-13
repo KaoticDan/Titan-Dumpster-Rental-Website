@@ -39,9 +39,9 @@ export function Pricing() {
   return <section className="pricing" id="Pricing" style={{ backgroundImage: `linear-gradient(rgba(0,0,0,.72),rgba(0,0,0,.78)),url('${assets.pricing}')` }}><div className="container"><div className="section-heading"><span className="eyebrow">Pricing</span><h2>A <em>Size</em> For Every Job</h2><p>We offer a variety of dumpster sizes to fit your project needs. From small cleanouts to large renovations, we have the perfect solution for you.</p></div><div className="price-grid">{prices.map(item=><article className="price-card" key={item.size}><h3>{item.size}</h3><p>{item.summary}</p><ul><li><strong>Price:</strong> Starts at {item.price}</li><li><strong>Dimensions:</strong> {item.dimensions}</li><li><strong>Weight:</strong> {item.weight}</li><li><strong>Best For:</strong> {item.best}</li></ul></article>)}</div><div className="center-actions"><ActionButtons /></div></div></section>;
 }
 
-export function Features({ eyebrow, heading, subheading, features, timeline = false }: { eyebrow: string; heading: string; subheading: string; features: readonly (readonly [string,string,string])[]; timeline?: boolean }) {
+export function Features({ eyebrow, heading, subheading, features }: { eyebrow: string; heading: string; subheading: string; features: readonly (readonly [string,string,string])[] }) {
   const items = features.map(([title,text,image])=><article className="feature" key={title}><div className="feature-image"><img src={image} alt="" loading="lazy" /></div><div className="feature-copy"><h3>{title}</h3><p>{text}</p></div><span className="feature-dot" aria-hidden="true"></span></article>);
-  return <section className={timeline ? "features timeline" : "features"}><div className="container"><div className="section-heading center"><span className="eyebrow">{eyebrow}</span><h2>{heading}</h2><p>{subheading}</p></div>{timeline ? <TimelineRail>{items}</TimelineRail> : <div className="feature-list">{items}</div>}</div></section>;
+  return <section className="features timeline"><div className="container"><div className="section-heading center"><span className="eyebrow">{eyebrow}</span><h2>{heading}</h2><p>{subheading}</p></div><TimelineRail>{items}</TimelineRail></div></section>;
 }
 
 export function Callout({ heading, text }: { heading: string; text: string }) {
